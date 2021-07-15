@@ -7,7 +7,6 @@
 function calculator() {
     const command = process.argv[2]
     const nums = process.argv.slice(3)
-    let total = 0
 
     if(!command) {
         return "No operation provided..."
@@ -17,24 +16,24 @@ function calculator() {
     }
     else {
         if(command === "plus") {
+            let total = 0
             for(let i = 0; i < nums.length; i++) {
                 total += Number(nums[i]) 
             }
+            return total
             
         }
         else if(command === "minus") {
-            for(let i = 0; i < nums.length; i++) {
+            let total = nums[0]
+            for(let i = 1; i < nums.length; i++) {
                 total -= Number(nums[i])
             }
+            return total
         }
         else {
             return `Invalid operation: ${command}`
-        }
-        
-       
+        }  
     }
-
-    return total
 }
 
 console.log(calculator())
