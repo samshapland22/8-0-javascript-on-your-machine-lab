@@ -34,6 +34,7 @@ function calculator() {
             return `Invalid operation: ${command}`
         }  
     }
+    
 }
 
 console.log(calculator())
